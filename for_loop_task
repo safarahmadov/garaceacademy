@@ -1,0 +1,134 @@
+# liste=[]
+
+for i in range(0,3):
+    prdouct_name = input("prodduct name")
+    price = int(input("sale price"))
+    sales_list = {"name": prdouct_name, "price": price }
+    liste.append(sales_list)
+print(liste)
+
+# liste=[]
+
+# for i in range(0,3):
+#     shareholder = int(input("səhmlərin sayı"))
+#     price = int(input("Müvaffiq qiymət"))
+#     sales_list = {"shareholder": shareholder, "price": price }
+#     liste.append(sales_list)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,5):
+#     sick_name = input("xəstə adi:")
+#     age = int(input("xəstə yaşı:"))
+#     sick_list = {"name": sick_name, "age": age }
+#     liste.append(sick_list)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,8):
+#     student_name = input("telebe adi:")
+#     student_age = int(input("telebe yasi: "))
+#     education = {"name": student_name, "age": student_age }
+#     liste.append(education)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,3):
+#     prdouct_name = input("Qida məhsulun adi: ")
+#     sale = int(input("qiyməti: "))
+#     sales_list = {"name": prdouct_name, "sales price": sale }
+#     liste.append(sales_list)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,3):
+#     Organizers = input("Tərtibatçılarının adı")
+#     age = int(input("yaşı"))
+#     programming_language = input("programlama dili")
+#     technology = {"Organizers": Organizers, "age": age, "language": programming_language}
+#     liste.append(technology)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,4):
+#     film_name = input("Filmlərin adı:")
+#     age = int(input("istehsal tarixi :"))
+#     enjoy = {"name": film_name, "age": age}
+#     liste.append(enjoy)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,4):
+#     kvadrat = input(" Evin kvadratı sahəsi :")
+#     price = int(input("qiyməti  :"))
+#     estate = {"kvadrat": kvadrat, "price": price}
+#     liste.append(estate)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,7):
+#     product_name = input("Məhsulun adı: ")
+#     price = int(input("qiyməti: "))
+#     trade = {"product_name": product_name, "price": price}
+#     liste.append(trade)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0,2):
+#     vegatables_name = input("Tərəvəzin adı : ")
+#     sale = int(input("qiyməti"))
+#     sales_list = {"vegatables_name": vegatables_name, "sales price": sale }
+#     liste.append(sales_list)
+# print(liste)
+
+# for i in range(0, 6):
+#     phone_name = input("Telefonun adı :")
+#     price = int(input("qiyməti  :"))
+#     communaction = {"phone_name": phone_name, "price": price}
+#     liste.append(communaction)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0, 2):
+#     ticket = int(input("Aviabilet :"))
+#     hotel = int(input("Otel: "))
+#     avto = int(input("avtomobil  :"))
+#     total=ticket+otel+avto
+#     travel = {"ticket": bilet, "hotel": hotel, "avto":avto, "total":total}
+#     liste.append(travel)
+# print(liste)
+
+# liste=[]
+
+# for i in range(0, 2):
+#     cementum = int(input("sement :"))
+#     sand = int(input("Qum: "))
+#     iron = int(input("dəmir :"))
+#     wood = int(input("taxta :"))  
+#     total=cementum+sand+iron+wood
+#     building = {"cementum": cementum, "sand": sand, "iron":iron  , "wood":wood, "total":total}
+#     liste.append(building)
+# print(liste)
+
+
+# liste=[]
+
+# for i in range(0,2):
+#     speed = int(input("km:"))
+#     time = int(input("time :"))
+#     distance=s/t
+#     average_speed = {"km": distance, "time": time, "distancet":distance}
+#     liste.append(average_speed)
+# print(liste)
+
+
+
