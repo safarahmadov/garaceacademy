@@ -1,0 +1,49 @@
+#1
+height=int(input("boy"))
+weight=int(input("kilo"))
+
+bmi=weight(height/100)**2
+
+if bki<18.5:
+    print("zəif")
+elif bki>25:
+    print("normal")
+elif bki<30:
+    print("kilolu")
+else:
+    print("obez")
+    
+#2
+online_cart={}
+total_price=0
+
+
+for i in range(2):
+    product=input("What are you buying ?")
+    price=int(input("how much pay?"))
+    tax=price+(price*18/100)
+    online_cart[product]=tax
+    
+for i in online_cart.values():
+    total_price+=i   
+    
+if total_price>100:
+    print("Toplam ödənəcək məbləğ",round(total_price, 2)+15)
+elif total_price>50:
+    print("Toplam ödənəcək məbləğ",round(total_price, 2)+10)
+else:
+    print("Toplam ödənəcək məbləğ",round(total_price, 2))
+    
+#3
+type_car=int(input("1(sedan),2(truck),3(bus)"))
+distance=int(input("How many kilometers"))
+
+if type_car==1:
+    print("Toplam ödənəcək məbləğ",distance*0.5)
+elif type_car==2:
+    print("Toplam ödənəcək məbləğ:",distance)
+else:
+    print("Toplam ödənəcək məbləğ:",distance*2)
+    
+    
+    
