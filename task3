@@ -28,9 +28,9 @@ for i in online_cart.values():
     total_price+=i   
     
 if total_price>100:
-    print("Toplam ödənəcək məbləğ",round(total_price, 2)+15)
+    print("Toplam 15manat kupon istifadə etdiniz. Toplam ödənəcək məbləğ:",round(total_price, 2)-15)
 elif total_price>50:
-    print("Toplam ödənəcək məbləğ",round(total_price, 2)+10)
+    print("Toplam 10manat kupon istifadə etdiniz. Toplam ödənəcək məbləğ:",round(total_price, 2)-10)
 else:
     print("Toplam ödənəcək məbləğ",round(total_price, 2))
     
