@@ -1,0 +1,62 @@
+# liste=["alma", "armut", "ciyelek"]
+
+# a=0
+
+# while a<len(liste):
+#     print(liste[a])
+#     a+=1
+# #################################################3
+# alphabe=["a","b", "c", "d","e", "f"]
+
+# a=0
+# while len(alphabe)>a:
+#     if alphabe[a]=="b" or alphabe[a]=="e":
+#         alphabe
+#     print(alphabe[a])
+#     a+=1
+####################################################3 
+# num_input=int(input("add number"))
+# a=0
+# while a<=num_input:
+#     print(a)
+#     a+=1
+####################################################
+
+# passwrodd1="1"
+
+# chans=3
+# for _ in range(3):
+#     pasword_search=input("Şifrəni daxil et.")
+#     if passwrodd1==pasword_search:
+#         print("success")
+#     else:
+#         chans-=1
+#         if chans==2:
+#             print("2 sansin qaldi")
+#         elif chans==1:
+#             print("son sansiniz qaldi")
+#         else:
+#             print("game over")            
+        
+# ###################################################3
+# question=["1. 2+2 necedir","2. 4*4 necedir", "3. 5*5 necedir", "4. 6*6 necedir", "5. 7*7 necedir","6. 10*10 necedir","7.20*20 necedir"]
+# correct=["4","16","25","36","49","100","400"]
+
+# a=0
+# correct_number=0
+# falseq=0
+# while a<len(correct):
+#     print(question[a])
+#     answer=input()
+#     if correct[a]==answer:
+#         correct_number+=1
+#         print("cavab dogrudur")
+#         a+=1
+#     else:
+#         print("cavab yanlisdir")
+#         a+=1
+#         falseq+=1
+#         if falseq %2==0:
+#             correct_number-=1
+# print(f"dogru cavab sayisi{correct_number}")
+    
