@@ -32,16 +32,14 @@ def lesson_status():
     for average in score_list:
         num += average
     num=num/len(score_list)
-    if num < 5:
+    if num > 4:
         return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin yaxşıdı"
-    elif num < 4:
+    elif num > 3:
         return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin normladı"
-    elif num < 3:
+    elif num > 2:
         return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin pisdi"
-    elif num < 2:
-        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Kəsildiniz "
     else:
-        print("5 ballıq sistemlə girin zəhmət olmasa")
+        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Kəsildiniz "
 
 print(lesson_status())
 ##################################################
