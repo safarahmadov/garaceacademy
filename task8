@@ -1,0 +1,74 @@
+# 2
+height = int(input("boy"))
+weight = int(input("kilo"))
+
+
+def bmi_calculator(heights, weights):
+    bmi = weights * (heights / 100) ** 2
+    if bmi < 18.5:
+        return "zəif"
+    elif bmi > 25:
+        return "normal"
+    elif bmi < 30:
+        return "kilolu"
+    else:
+        return "obez"
+
+
+a = bmi_calculator(height, weight)
+print(a)
+##################################################
+# 3
+def lesson_status():
+    number_lesson = int(input("Dərs sayısı nə qədərdir ?"))
+    score_list = list()
+    lessons = {}
+    for _ in range(number_lesson):
+        lesson_name = input("Dərsin adı ?")
+        lesson_score=int(input("Neçə almısan'(5 ballıq sistemlə zəhmət olmasa')? "))
+        lessons[lesson_name] = lesson_score
+        score_list.append(lesson_score)
+    num = 0
+    for average in score_list:
+        num += average
+    num=num/len(score_list)
+    if num < 5:
+        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin yaxşıdı"
+    elif num < 4:
+        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin normladı"
+    elif num < 3:
+        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Dərslərin pisdi"
+    elif num < 2:
+        return f"Dərslərin: {lessons} \n Ortalaman: {num} \n Kəsildiniz "
+    else:
+        print("5 ballıq sistemlə girin zəhmət olmasa")
+
+print(lesson_status())
+##################################################
+# 1
+shopping_list = dict()
+
+
+def salary_calculater():
+    total_salary = int(input("Toplam maaşınız nə qədərdir ?"))
+    end_shopping = False
+    total_price = 0
+    while not end_shopping:
+        shopping_name = input("Nə almısan?")
+        price = int(input("Qiyməti ?"))
+        shopping_list[shopping_name] = price
+        total_price += price
+        another_shop = input("Başqa alış veriş etmisən Y/N?").lower()
+        if another_shop == 'y':
+            continue
+        else:
+            remaining_salary = total_salary - total_price
+            end_shopping = True
+            return remaining_salary
+
+
+remaining = salary_calculater()
+if remaining >= 0:
+    print(f"Maaşınız bu qədər qaldı: {remaining}\nXərclədiginiz pullar və məhsullar: {shopping_list}")
+else:
+    print(print(f"Bu ay borca girdiniz: \n Xərclədiginiz pullar və məhsullar: {shopping_list}"))
