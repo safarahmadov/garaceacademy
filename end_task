@@ -1,0 +1,84 @@
+from cryptography.fernet import Fernet
+import sqlite3
+
+
+def generate_key():
+    return Fernet.generate_key()
+
+
+def load_key():
+    return open("key.key", "rb").read()
+
+
+def encrypt_password(password):
+    key = load_key()
+    f = Fernet(key)
+    return f.encrypt(password.encode()).decode()
+
+
+def decrypt_password(encrypted_password):
+    key = load_key()
+    f = Fernet(key)
+    return f.decrypt(encrypted_password.encode()).decode()
+
+
+db = sqlite3.connect("data.db")
+sql = db.cursor()
+
+key = generate_key()
+with open("key.key", "wb") as key_file:
+    key_file.write(key)
+
+sql.execute("""CREATE TABLE IF NOT EXISTS data(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                    username VARCHAR,
+                                                    first_name VARCHAR(100),
+                                                    last_name VARCHAR(50),
+                                                    email VARCHAR,
+                                                    password VARCHAR)""")
+
+while True:
+    choose = input("(1)Sign In, (2)Signup")
+    if choose == "1":
+        verify = False
+        user = input("Enter your username: ")
+        firstname = input("Enter your firstname: ")
+        lastname = input("Enter your lastname: ")
+        mail = input("Enter your mail: ")
+        password = input("Enter your password: ")
+        password_try = input("Re-enter your password: ")
+
+        if password == password_try:
+            sql.execute("SELECT email FROM data")
+            for i in sql.fetchall():
+                if mail in i:
+                    verify = True
+            if verify:
+                print("This email is already in your data, try another email")
+            else:
+                encrypted_password = encrypt_password(password)
+                sql.execute(
+                    f"INSERT INTO data(username, first_name, last_name, email, password) VALUES('{user}', '{firstname}', '{lastname}', '{mail}', '{encrypted_password}')")
+                db.commit()
+                print("Sign Up Success")
+        else:
+            print("Passwords do not match")
+
+    if choose == "2":
+        verify_login = False
+        while True:
+            login_mail = input("Enter your mail: ")
+            login_password = input("Enter your password: ")
+
+            sql.execute("SELECT email, password FROM data")
+            data = sql.fetchall()
+            for row in data:
+                db_email, db_encrypted_password = row
+                if login_mail == db_email and login_password == decrypt_password(db_encrypted_password):
+                    verify_login = True
+                    break
+
+            if verify_login:
+                print("Sign In Success")
+                break
+            else:
+                print("Password or email is incorrect")
